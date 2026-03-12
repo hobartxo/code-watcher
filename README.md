@@ -28,13 +28,15 @@ cp launch.sh ~/scripts/
 chmod +x ~/scripts/launch.sh
 ```
 
-**2. The OpenClaw Skill**
+**2. Configure your Agent & Paths**
+By default, `launch.sh` uses `acpx` as the CLI coding agent. **Open `launch.sh` and change lines 39-40 to use your preferred agent (e.g., `claude-code`, `aider`, etc.).** 
+*(You should also ensure `WORKSPACE_DIR` near the top of the file points to where your projects live.)*
+
+**3. The OpenClaw Skill**
 Open `SKILL.md` and edit the `exec command` line to point to wherever you saved `launch.sh`. Then, copy `SKILL.md` into your OpenClaw skills directory:
 ```bash
 cp SKILL.md ~/.openclaw/workspace/skills/code-watcher/SKILL.md
 ```
-
-*(Note: Ensure you update `WORKSPACE_DIR` inside `launch.sh` if your projects live somewhere other than `~/.openclaw/workspace/projects`)*
 
 ## Usage
 
@@ -44,7 +46,12 @@ Just ask your agent to use the Code Watcher skill.
 > 
 > **Agent:** "Spawned `snake-game` — Warp viewer open."
 
-Warp will pop open, and you will see the agent typing, thinking, running commands, and fixing errors in real time.
+Warp will pop open, and you will see the agent typing, thinking, running commands, and fixing errors in real time. 
+
+*Note: The `launch.sh` script intentionally includes a `sleep 3600` at the end of the run. This keeps the `tmux` pane alive for an hour after the agent finishes so you can scroll back and read the output without the window instantly collapsing.*
 
 ## Limitations
 - Heavily optimized for macOS and Warp. If you use iTerm or standard Terminal, you will need to modify the AppleScript block at the bottom of `launch.sh`.
+
+## License
+MIT
