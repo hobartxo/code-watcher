@@ -53,5 +53,9 @@ Warp will pop open, and you will see the agent typing, thinking, running command
 ## Limitations
 - Heavily optimized for macOS and Warp. If you use iTerm or standard Terminal, you will need to modify the AppleScript block at the bottom of `launch.sh`.
 
+## Disclaimer
+
+This software is provided "as is", without warranty of any kind. The authors and HXO Studio are not liable for any damages or issues arising from the use of this software. Use at your own risk. See [LICENSE](LICENSE) for full terms.
+
 ## License
 MIT
